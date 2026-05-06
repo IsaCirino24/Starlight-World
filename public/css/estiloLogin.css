@@ -1,0 +1,82 @@
+
+
+/* FUNDO LOGIN */
+body{
+    margin: 0;
+    font-family: Arial;
+    color: white;
+     background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,1.9)),
+       
+        url('../assets/img/Fundo6.jpg') no-repeat center/cover;
+}
+/* NAVBAR */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background: #0a0a0a;
+}
+.menu {
+    display: flex;  /* cabecalho - home -ect */
+    list-style: none;
+    gap: 20px;
+}
+.menu a {
+    color: white;
+    text-decoration: none;
+}
+.login {
+    background: purple; /* Botao de login */
+    padding: 10px 20px;
+    border-radius: 20px;
+}
+
+/* CENTRALIZAR */
+.login-container {
+    display: flex;
+    flex-direction: column; 
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin-top: 0px;
+}
+
+/* CARD */
+.login-card {
+    background: black;
+    padding: 40px;
+    border-radius: 15px;
+    width: 350px;
+    color: white;
+    text-align: center;
+}
+
+/* SUBTITULO */
+.sub-login {
+    color: white;
+    margin-bottom: 15px;
+      margin-top: -5px;
+}
+
+/* INPUTS */
+.login-card input {
+    width: 100%;
+    padding: 9px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    border: none;
+    background: #2a003f;
+    color: white;
+}
+
+/* BOTÃO */
+.login-card button {
+    width: 100%;
+    padding: 10px;
+    border-radius: 15px;
+    border: none;
+    background: linear-gradient(45deg, #a100ff, #ff00c8);
+    color: white;
+    cursor: pointer;
+}

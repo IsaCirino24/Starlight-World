@@ -1,0 +1,212 @@
+body{
+    margin: 0;
+    font-family: Arial;
+    background-color: #111;
+    color: white;
+}
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background: #0a0a0a;
+}
+.menu {
+    display: flex;  /* cabecalho - home -ect */
+    list-style: none;
+    gap: 20px;
+}
+.menu a {
+    color: white;
+    text-decoration: none;
+}
+.sair {
+    background: purple; /* Botao de login */
+    padding: 10px 20px;
+    border-radius: 20px;
+}
+
+.topo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;       
+    margin-top: -50px;     
+}
+
+.topo img {
+    width: 210px;
+}
+
+h1 {
+    font-size: 60px;
+    font-family: 'Irish Grover', cursive;
+    margin: 0;
+}
+.sub p {
+    text-align: center;
+    margin: 0;
+    font-size: 40px;
+    font-family: 'Irish Grover', cursive;
+    line-height: 1.1;
+     margin-top: -70px;
+}
+
+/* CARD */
+
+.card {
+    display: flex;
+    align-items: center;
+     justify-content: center;
+    gap: 40px;
+    margin-top: -5px;
+    padding: 20px;
+}
+
+/* imagem grande */
+.img1 {
+     width: 350px;
+    border-radius: 15px;
+}
+
+/* texto */
+.card p {
+     max-width: 400px;
+    font-size: 28px;
+    line-height: 1.4;
+    margin-top: -30px;
+}
+
+/* BLOCO DE BAIXO */
+
+.bottom {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* joga pra direita */
+    gap: 10px;
+    
+}
+
+/* imagem pequena */
+
+.bottom img {
+    width: 280px;
+    border-radius: 5px;
+    margin-top: -200px;
+    margin-left: 300px;
+}
+
+/* botão */
+
+.btn {
+    text-decoration: none;
+    padding: 15px 42px;
+    background: #a100ff;
+    color: white;
+    border-radius: 15px;
+    font-size: 20px;
+    margin-top: -100px;
+    margin-right: 100px;
+}
+
+
+body{
+    margin: 0;
+    background: #0b0013;
+    font-family: Arial;
+    color: white;
+}
+
+.quiz-container{
+    width: 90%;
+    margin: auto;
+    padding: 40px 0;
+}
+
+
+
+/* PERGUNTAS */
+
+.pergunta{
+    background: #14001f;
+    border-radius: 20px;
+    padding: 30px;
+    margin-bottom: 40px;
+}
+
+.pergunta h2{
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 24px;
+}
+
+/* OPÇÕES */
+
+.opcoes{
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.card-opcao{
+    background: #ececec;
+    width: 180px;
+    padding: 15px;
+    border-radius: 15px;
+
+    text-align: center;
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.card-opcao:hover{
+    transform: scale(1.05);
+    border: 2px solid #b000ff;
+}
+
+.card-opcao img{
+    width: 100%;
+    border-radius: 10px;
+}
+
+.card-opcao p{
+    color: black;
+    font-weight: bold;
+}
+
+.card-opcao input{
+    display: none;
+}
+
+/* botão */
+
+.btn-finalizar{
+    display: block;
+    margin: auto;
+
+    padding: 15px 40px;
+
+    border: none;
+    border-radius: 30px;
+
+    background: #b000ff;
+    color: white;
+
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.btn-finalizar:hover{
+    background: #d13cff;
+}
+
+#div_mensagem{
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 25px;
+    color: #d69cff;
+    font-weight: bold;
+}

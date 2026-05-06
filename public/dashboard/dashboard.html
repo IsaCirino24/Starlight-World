@@ -2,15 +2,13 @@
 <html lang="pt-br">
 
 <head>
-    <link rel="shortcut icon" href="../assets/icon/favicon2.ico" type="image/x-icon">
+
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AquaTech | Dashboards</title>
+    <title>Dashboards</title>
 
-    
-    <link rel="stylesheet" href="./../css/dashboards.css">
-    <link rel="stylesheet" href="./../css/estilo.css" />
+    <link rel="stylesheet" href="../css/dashboard.css">
     <script src="../js/sessao.js"></script>
     <script src="./../js/alerta.js"></script>
 
@@ -29,51 +27,122 @@
 <!-- <body onload=" atualizarFeed()"> -->
 
 <body>
+  
+<div class="container">
 
-    <div class="janela">
-        <div class="header-left">
-            <h1>AquaTech</h1>
+        <div class="menu">
+            
+            <div class="Topo">
+                <h1>Starlight</h1>
 
-            <div class="hello">
-                <h3>Olá, <span id="b_usuario">usuário</span>!</h3>
+                <h2>World</h2>
+
+                <img src="../assets/img/69.png" alt="Foto">
+                <h3>Seu Nome</h3>
             </div>
 
-            <div class="btn-nav-white">
-                <a href="./cards.html">
-                    <h3>Aquários</h3>
+
+            <div class="nav-bar">
+
+                <a href="Dashbord.html" class="nav-item">
+                    <img src="../assets/img/73.png"> Dashboard
                 </a>
-            </div>
-
-            <div class="btn-nav">
-
-                <h3>Gráficos</h3>
-
-            </div>
-
-            <div class="btn-nav-white">
-                <a href="./mural.html">
-                    <h3>Mural de Avisos</h3>
+                <a href="Quiz.html" class="nav-item">
+                    <img src="../assets/img/74.png"> Quiz
                 </a>
+                <a href="#" class="nav-item">
+                    <img src="../assets/img/72.png"> Membros
+                </a>
+                <a href="#" class="nav-item">
+                    <img src="../assets/img/71.png"> Galeria
+                </a>
+                
             </div>
 
-            <div class="btn-logout" onclick="limparSessao()">
-                <h3>Sair</h3>
-            </div>
+            <button><a href="../index.html">Sair</a></button>
+        </div>
+       
 
+        <div class="conteudo">
+
+    <div class="topo-dashboard">
+
+        <div class="texto">
+            <h1>Bem-vinda de volta, ARMY! 💜</h1>
+            <p>Aqui está o seu desempenho no quiz sobre o BTS.</p>
         </div>
 
-        <div class="dash">
-            <div id="alerta">
-            </div>
+        
 
-            <div class="btns-dash" id="btnAquario">
-                <!-- O gráfico é chamado de acordo com o id (fk_aquario) do banco  -->
-            </div>
-            <div id="graficos">
-            </div>
-        </div>
     </div>
 
+    <div class="kpis">
+
+        <div class="card-kpi">
+            <h4>PONTUAÇÃO DO QUIZ</h4>
+
+            <div class="info">
+                <img src="../assets/img/68.png">
+
+                <div>
+                    <h2 id="pontosQuiz"></h2>
+                    <p>acertos</p>
+                </div>
+            </div>
+
+            <small>Muito bem! Continue assim 💜</small>
+        </div>
+
+        
+
+        <div class="card-kpi">
+            <h4>CATEGORIA QUE MAIS ACERTOU</h4>
+
+            <div class="info">
+                <img src="../assets/img/67.png">
+
+                <div>
+                    <h2 id="categoria"></h2>
+
+                    <small>90% de acertos 💜</small>
+                </div>
+            </div>
+
+            <small></small>
+        </div>
+
+        <div class="card-kpi">
+            <h4>TEMPO DO QUIZ</h4>
+
+            <div class="info">
+                <img src="../assets/img/66.png">
+
+                <div>
+                    <h2 id="tempo"></h2>
+                    <p>minutos</p>
+                </div>
+            </div>
+
+            <small>Você foi rápido! ⚡</small>
+        </div>
+
+    </div>
+    
+<div class="graficos">
+
+    <div class="grafico-card">
+        <h3>ACERTOS X ERROS</h3>
+        <canvas id="graficoPizza"></canvas>
+    </div>
+
+
+    <div class="grafico-card">
+        <h3>DESEMPENHO POR CATEGORIA</h3>
+        <canvas id="graficoBarra"></canvas>
+    </div>
+
+</div>
+</div>
 
 </body>
 

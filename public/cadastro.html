@@ -3,115 +3,115 @@
 
 <head>
   <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" /> <!-- nao sei nao e igual-->
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>AquaTech | Cadastro</title>
-
-  <script src="./js/sessao.js"></script>
-
-  <link rel="stylesheet" href="./css/estilo.css" />
-  <link rel="icon" href="./assets/icon/favicon2.ico" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" />
+ <title>Cadastro</title>
+ <link rel="stylesheet" href="css/estilo.css">
+<script src="./js/sessao.js"></script>
 </head>
+<body class="cadastro">
+   <!--Navbar-->
+      <header class="cabecalho">
+    <div class="navbar">
 
-<body onload="listar()">
-  <!--header inicio-->
-  <div class="header">
-    <div class="container">
-      <h1 class="titulo">AquaTech</h1>
-      <ul class="navbar">
-        <li>
-          <a href="index.html">Inicial</a>
-        </li>
-        <li>
-          <a href="simulador.html">Simulador</a>
-        </li>
-        <li>|</li>
-        <li>
-          <a href="login.html">Login</a>
-        </li>
-        <li class="agora">
-          <a href="#">Cadastro</a>
-        </li>
-      </ul>
-    </div>
-  </div>
-  <!--header fim-->
+    <div class="logo">Starlight World</div>
 
-  <div class="login">
-    <div class="alerta_erro">
-      <div class="card_erro" id="cardErro">
-        <span id="mensagem_erro"></span>
+    <ul class="menu">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="index.html#membros">Membros</a></li>
+      <li><a href="cadastro.html">Cadastro</a></li>
+      <li><a href="index.html#sobre">Sobre</a></li>
+      <li><a href="login.html" class="login">Login</a></li>
+    </ul>
       </div>
-    </div>
-    <div class="container">
-      <div class="card card-cadastro">
-        <h2>Bem-vindo!</h2>
-        <div class="formulario">
-          <!--
-                         Para inserir mais um campo, copie uma das inputs abaixo.
-                         Assim que inserir vá para o script abaixo.
-                     -->
-          <div class="campo">
-            <span>Código de ativação:</span>
-            <input id="codigo_input" type="text" placeholder="Insira aqui seu código" />
-          </div>
-          <div class="campo">
-            <span>Nome:</span>
-            <input id="nome_input" type="text" placeholder="Seu nome" />
-          </div>
-          <div class="campo">
-            <span>E-mail:</span>
-            <input id="email_input" type="text" placeholder="meuemail@provedor.com" />
-          </div>
-          <div class="campo">
-            <span>Senha:</span>
-            <input id="senha_input" type="password" placeholder="******" />
-          </div>
-          <div class="campo">
-            <span>Confirmação da Senha:</span>
+</header>
+
+
+  <!--Titulo-->
+<div class="titulo">
+  <h1>Cadastre-se no Fandom!</h1>
+  <p>Junte-se à ARMY e faça parte da nossa comunidade</p>
+</div>
+
+ <!-- imagem -->
+<div class="container">
+    <div class="card roxa2">
+  <div class="Cadastro-img">
+    <img src="assets/img/cadastro.jpeg">
+  </div>
+  </div>
+
+ <!-- Formulario -->
+  <div class="formulario"> 
+
+            <p>Nome:</p>
+            <input type="text" id="input_nome" placeholder="Seu nome">
+          
+            <p>E-mail</p>
+            <input type="email" id="input_email" placeholder="seu@email.com">
+
+            <p>Senha</p>
+            <input type="password" id="input_senha" placeholder="******">
+
+            <p>Confirmação da Senha:</p>
             <input id="confirmacao_senha_input" type="password" placeholder="******" />
-          </div>
-          <button class="botao" onclick="cadastrar()">Cadastrar</button>
-        </div>
-        <div id="div_aguardar" class="loading-div">
-          <img src="./assets/circle-loading.gif" id="loading-gif" />
-        </div>
+          
+            
+          <p>Bias Favorito</p>
+          <select id="select_bias">
+          <option>Escolha seu bias</option>
+          <option>Jungkook</option>
+          <option>V</option>
+          <option>Jimin</option>
+          <option>RM</option>
+          <option>J-Hope</option>
+          <option>Jin</option>
+          <option>Suga</option>
+          </select>
+
+
+          <button onclick="registrar()">Registrar ✨</button>
+
+        
+        <!-- Card  -->
+    <div class="info-box">
+      <div>
+        <p>Fãs Cadastrados</p>
+        <h2 id="total_fas">0</h2>
+      </div>
 
         <div id="div_erros_login"></div>
+
+    
+ <div class="box-bias">
+        
+        <div>
+          <p>Bias com mais fã</p>
+          <strong id="bias_fas">Jimin</strong>
+       </div>
       </div>
     </div>
+
   </div>
-
-  <!--footer inicio-->
-  <div class="footer">
-    <div class="container">
-      <h4>Feito com amor por aluno &hearts; SPTech &copy; 2023</h4>
-      <span class="version">v1.0.0</span>
-    </div>
-  </div>
-  <!--footer fim-->
-</body>
-
-</html>
-
+</div>
+</body></html>
 <script>
 
   // Array para armazenar empresas cadastradas para validação de código de ativação 
-  let listaEmpresasCadastradas = [];
+  let listaCadastradas = [];
 
-  function cadastrar() {
+  function registrar() {
     // aguardar();
 
     //Recupere o valor da nova input pelo nome do id
     // Agora vá para o método fetch logo abaixo
-    var nomeVar = nome_input.value;
-    var emailVar = email_input.value;
-    var senhaVar = senha_input.value;
+    var nomeVar = input_nome.value;
+    var emailVar = input_email.value;
+    var senhaVar =  input_senha.value;
     var confirmacaoSenhaVar = confirmacao_senha_input.value;
-    var codigoVar = codigo_input.value;
-    var idEmpresaVincular
+    var bias = select_bias.value;
+    
 
     // Verificando se há algum campo em branco
     if (
@@ -119,30 +119,119 @@
       emailVar == "" ||
       senhaVar == "" ||
       confirmacaoSenhaVar == "" ||
-      codigoVar == ""
-    ) {
-      cardErro.style.display = "block";
-      mensagem_erro.innerHTML =
-        "(Mensagem de erro para todos os campos em branco)";
-
-      finalizarAguardar();
-      return false;
-    } else {
-      setInterval(sumirMensagem, 5000);
-    }
-
-    // Verificando se o código de ativação é de alguma empresa cadastrada
-    for (let i = 0; i < listaEmpresasCadastradas.length; i++) {
-      if (listaEmpresasCadastradas[i].codigo_ativacao == codigoVar) {
-        idEmpresaVincular = listaEmpresasCadastradas[i].id
-        console.log("Código de ativação válido.");
-        break;
-      } else {
-        cardErro.style.display = "block";
-        mensagem_erro.innerHTML = "(Mensagem de erro para código inválido)";
-        finalizarAguardar();
+      bias == "Escolha seu bias"
+    ) { alert("Preencha todos os campos!");
+        return false;
       }
+
+
+ /*verifica se a email @ e .com*/
+    if (!emailVar.includes("@")){
+      alert("Digite um e-mail válido! Falta o @");
+       return false;
+    }if ( !emailVar.includes(".com")){
+      alert("Digite um e-mail válido! Falta o .com");
+       return false;
     }
+
+ /*verifica se esta com 8 caracteres e letrs maiúcula*/
+    if (senhaVar.length < 8) {
+        alert("A senha precisa ter pelo menos 8 caracteres!");
+        return false;
+    }
+    if(senhaVar == senhaVar.toLowerCase()){
+      alert("A senha precisa ter pelo menos uma letra maiúscula!");
+       return false;
+    }
+
+    /*verifica se a senha tem numeros*/
+    let numero =[0,1,2,3,4,5,6,7,8,9];
+    let temnumero =false;
+    for (let i = 0; i < numero.length; i++){
+      if(senhaVar.includes(numero[i])){
+        temnumero = true
+        break
+      }
+    } if (!temnumero){
+      alert("A senha precisa ter pelo menos um número");
+       return false;
+    }
+    
+     if(senhaVar != confirmacaoSenhaVar){
+      alert("As senhas não são iguais");
+      return false;
+     }
+
+        
+/*coloca na lista de cadastro*/
+      let usuario = {
+        nomeVar: nomeVar,
+        emailVar: emailVar,
+        senhaVar: senhaVar,
+        bias: bias };
+
+     listaCadastradas.push(usuario);
+     total_fas.innerHTML = listaCadastradas.length;
+
+
+     let contBias = {
+      Jungkook: 0,
+    V: 0,
+    Jimin: 0,
+    RM: 0,
+    "J-Hope": 0,
+    Jin: 0,
+    Suga: 0
+};
+for (let i = 0; i < listaCadastradas.length; i++) {
+
+    let biasUsuario = listaCadastradas[i].bias;
+
+    contBias[biasUsuario]++;
+
+}
+
+let maior = 0;
+let favorito = "";
+
+if (contBias["Jungkook"] > maior) {
+    maior = contBias["Jungkook"];
+    favorito = "Jungkook";
+}
+
+if (contBias["V"] > maior) {
+    maior = contBias["V"];
+    favorito = "V";
+}
+
+if (contBias["Jimin"] > maior) {
+    maior = contBias["Jimin"];
+    favorito = "Jimin";
+}
+
+if (contBias["RM"] > maior) {
+    maior = contBias["RM"];
+    favorito = "RM";
+}
+
+if (contBias["J-Hope"] > maior) {
+    maior = contBias["J-Hope"];
+    favorito = "J-Hope";
+}
+
+if (contBias["Jin"] > maior) {
+    maior = contBias["Jin"];
+    favorito = "Jin";
+}
+
+if (contBias["Suga"] > maior) {
+    maior = contBias["Suga"];
+    favorito = "Suga";
+}
+
+bias_fas.innerHTML = favorito;
+     
+
 
     // Enviando o valor da nova input
     fetch("/usuarios/cadastrar", {
@@ -156,57 +245,25 @@
         nomeServer: nomeVar,
         emailServer: emailVar,
         senhaServer: senhaVar,
-        idEmpresaVincularServer: idEmpresaVincular
+        biasServer: bias
       }),
     })
-      .then(function (resposta) {
-        console.log("resposta: ", resposta);
-
-        if (resposta.ok) {
-          cardErro.style.display = "block";
-
-          mensagem_erro.innerHTML =
-            "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
-
+      .then(res => {
+        if (res.ok) {
+         alert("Cadastro realizado com sucesso!");
           setTimeout(() => {
-            window.location = "login.html";
+            window.location = "index.html";
           }, "2000");
 
-          limparFormulario();
-          finalizarAguardar();
         } else {
-          throw "Houve um erro ao tentar realizar o cadastro!";
+          throw "Erro no cadastro!";
         }
       })
-      .catch(function (resposta) {
-        console.log(`#ERRO: ${resposta}`);
-        finalizarAguardar();
+      .catch(err => {
+        console.log(err);
+        
       });
 
     return false;
   }
-
-  // Listando empresas cadastradas 
-  function listar() {
-    fetch("/empresas/listar", {
-      method: "GET",
-    })
-      .then(function (resposta) {
-        resposta.json().then((empresas) => {
-          empresas.forEach((empresa) => {
-            listaEmpresasCadastradas.push(empresa);
-
-            console.log("listaEmpresasCadastradas")
-            console.log(listaEmpresasCadastradas[0].codigo_ativacao)
-          });
-        });
-      })
-      .catch(function (resposta) {
-        console.log(`#ERRO: ${resposta}`);
-      });
-  }
-
-  function sumirMensagem() {
-    cardErro.style.display = "none";
-  }
-</script>
+  </script>
