@@ -29,31 +29,32 @@ body{
 
 .Topo h1{
     font-family: 'Playfair Display', serif;
-    font-size: 42px;
+    font-size: 40px;
     margin: 0;
     color: white;
     font-weight: 400;
+    margin-top: -10px;
 }
 
 .Topo h2{
     font-family: 'Playfair Display', serif;
-    font-size: 30px;
+    font-size: 29px;
     margin: 0;
     color: #C89CFF;
     font-weight: 400;
 }
 
 .Topo img{
-    width: 200px;
-    height: 200px;
+    width: 160px;
+    height: 160px;
     border-radius: 50%;
-    margin-top: 15px;
+    margin-top: 6px;
    
 }
 
 .Topo h3{
-    margin-top: 10px;
-    font-size: 16px;
+    margin-top: -5px;
+    font-size: 15px;
     color: #C89CFF;
 }
 
@@ -61,7 +62,7 @@ body{
 
 .nav-bar{
     width: 100%;
-    margin-top: 15px;
+    margin-top: 5px;
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -71,7 +72,7 @@ body{
     background: #2b003f;
     color: #C89CFF;
     text-decoration: none;
-    padding: 15px;
+    padding: 12px;
     border-radius: 12px;
     display: flex;
     align-items: center;
@@ -97,7 +98,7 @@ button{
     border: none;
     border-radius: 25px;
     background: #b000ff;
-    padding: 12px 40px;
+    padding: 10px 35px;
     cursor: pointer;
 }
 
@@ -154,19 +155,19 @@ button a{
     background: #12001d;
     border: 1px solid #3d1457;
     border-radius: 15px;
-    padding: 20px;
+    padding: 12px;
 }
 
 .card-kpi h4{
     color: #a98cc9;
     font-size: 12px;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
 }
 
 .info{
     display: flex;
     align-items: center;
-    gap: 15px;
+    gap: 12px;
 }
 
 .info img{
@@ -186,15 +187,14 @@ button a{
 
 .card-kpi small{
     display: block;
-    margin-top: 15px;
+    margin-top: 12px;
     color: #b58de0;
 }
 
 .graficos{
     
-    margin-top: 30px;
-
-    display: grid;
+    margin-top: 25px;
+    display: flex;
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
 
@@ -204,12 +204,29 @@ button a{
     background: #12001d;
     border: 1px solid #3d1457;
     border-radius: 15px;
-    padding: 20px;
-    height: 350px;
+    padding: 15px;
+    width: 48%;
+    height: 270px;
 }
 
 .grafico-card h3{
     color: white;
     font-size: 14px;
     margin-bottom: 20px;
+}
+#graficoPizza{
+    max-width: 200px;
+    max-height: 200px;
+    margin: auto;
+}
+
+#graficoBarra{
+    height: 200px !important;
+}
+.grafico-card:first-child{
+    width: 30%;
+}
+
+.grafico-card:last-child{
+    width: 70%;
 }

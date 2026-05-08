@@ -40,9 +40,9 @@
             </label>
 
             <label class="card-opcao">
-                <input type="radio" name="p1" onclick="certa()">
+                <input type="radio" name="p1" onclick="certa('historia')">
                 <img src="../assets/img/76.png">
-                <p>Escoteiros à prova de balas</p>
+                <p>Garotos à prova de balas</p>
             </label>
 
             <label class="card-opcao">
@@ -73,7 +73,7 @@
             </label>
 
             <label class="card-opcao">
-                <input type="radio" name="p2" onclick="certa()">
+                <input type="radio" name="p2" onclick="certa('historia')">
                 <img src="../assets/img/60.png">
                 <p>2013</p>
             </label>
@@ -98,13 +98,13 @@
         <div class="opcoes">
 
             <label class="card-opcao">
-                <input type="radio" name="p3" onclick="certa()">
+                <input type="radio" name="p3" >
                 <img src="../assets/img/58.png">
                 <p>Skool Luv Affair</p>
             </label>
 
             <label class="card-opcao">
-                <input type="radio" name="p3" >
+                <input type="radio" name="p3" onclick="certa('musicas')">
                 <img src="../assets/img/48.png">
                 <p>2 Cool 4 Skool</p>
             </label>
@@ -130,7 +130,7 @@
         <div class="opcoes">
 
             <label class="card-opcao">
-                <input type="radio" name="p4"  onclick="certa()">
+                <input type="radio" name="p4"  onclick="certa('membros')">
                 <img src="../assets/img/76.png">
                 <p>Jin</p>
             </label>
@@ -161,7 +161,7 @@
         <div class="opcoes">
 
             <label class="card-opcao">
-                <input type="radio" name="p5" onclick="certa()">
+                <input type="radio" name="p5" onclick="certa('musicas')">
                 <img src="../assets/img/83.png">
                 <p>Dynamite</p>
             </label>
@@ -192,7 +192,7 @@
         <div class="opcoes">
 
             <label class="card-opcao">
-                <input type="radio" name="p6" onclick="certa()">
+                <input type="radio" name="p6" onclick="certa('membros')">
                 <img src="../assets/img/75.png">
                 <p>Rm</p>
             </label>
@@ -229,7 +229,7 @@
             </label>
 
             <label class="card-opcao">
-                <input type="radio" name="p7" onclick="certa()">
+                <input type="radio" name="p7" onclick="certa('membros')">
                 <img src="../assets/img/39.png">
                 <p>7</p>
             </label>
@@ -255,7 +255,7 @@
         <div class="opcoes">
 
             <label class="card-opcao">
-                <input type="radio" name="p8" onclick="certa()">
+                <input type="radio" name="p8" onclick="certa('historia')">
                 <img src="../assets/img/46.png">
                 <p>Army</p>
             </label>
@@ -286,7 +286,7 @@
         <div class="opcoes">
 
             <label class="card-opcao">
-                <input type="radio" name="p9"  onclick="certa()">
+                <input type="radio" name="p9"  onclick="certa('musicas')">
                 <img src="../assets/img/60.png">
                 <p>DNA</p>
             </label>
@@ -322,7 +322,7 @@
             </label>
 
             <label class="card-opcao">
-                <input type="radio" name="p10" onclick="certa()">
+                <input type="radio" name="p10" onclick="certa('membros')">
                 <img src="../assets/img/81.png">
                 <p>Suga</p>
             </label>
@@ -357,7 +357,6 @@ let membros = 0;
 let historia = 0;
 let musicas = 0;
 
-let inicio = Date.now();
 
 function certa(categoria){
 
@@ -379,40 +378,34 @@ function certa(categoria){
 
 function Resultado(){
 
-    let fim = Date.now();
-
-    let tempo = Math.floor((fim - inicio) / 1000);
-
     let melhorCategoria = "";
 
     if(membros > historia && membros > musicas){
         melhorCategoria = "Membros";
     }
-
     else if(historia > musicas){
         melhorCategoria = "História";
     }
-
     else{
         melhorCategoria = "Músicas";
     }
 
-    localStorage.setItem("pontos", pontos);
-
-    localStorage.setItem("tempo", tempo + "s");
-
-    localStorage.setItem("categoria", melhorCategoria);
-
-    localStorage.setItem("membros", membros);
-
-localStorage.setItem("historia", historia);
-
-localStorage.setItem("musicas", musicas);
+    fetch("/quiz/salvar", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            acertos: pontos,
+            membros: membros,
+            historia: historia,
+            musicas: musicas,
+            categoria: melhorCategoria
+        })
+    });
 
     window.location.href = "dashboard.html";
-
 }
-
 
 
 

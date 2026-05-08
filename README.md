@@ -4,7 +4,7 @@
 <h3>Blog sobre Bts - Projeto Pessoal - Sptech<h3>
 
 
-O site contém:
+<p>O site contém:
 
 Página inicial com informações sobre o BTS
 
@@ -21,4 +21,4 @@ Objetivo
 Melhorar minhas habilidades em programação.
 Desenvolvido
 
--Isabella Cirino Cotinguiba
+-Isabella Cirino Cotinguiba<p>
