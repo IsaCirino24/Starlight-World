@@ -32,7 +32,7 @@ body{
     border-radius: 20px;
 }
 
-/* CENTRALIZAR */
+
 .login-container {
     display: flex;
     flex-direction: column; 
@@ -52,14 +52,14 @@ body{
     text-align: center;
 }
 
-/* SUBTITULO */
+
 .sub-login {
     color: white;
     margin-bottom: 15px;
       margin-top: -5px;
 }
 
-/* INPUTS */
+
 .login-card input {
     width: 100%;
     padding: 9px;
@@ -70,7 +70,7 @@ body{
     color: white;
 }
 
-/* BOTÃO */
+
 .login-card button {
     width: 100%;
     padding: 10px;
