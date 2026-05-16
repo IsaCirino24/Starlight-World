@@ -396,6 +396,7 @@ function Resultado(){
             "Content-Type": "application/json"
         },
         body: JSON.stringify({
+            idUsuario: sessionStorage.ID_USUARIO,
             acertos: pontos,
             membros: membros,
             historia: historia,

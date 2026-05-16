@@ -154,15 +154,14 @@
 
  nomeUsuario.innerHTML = sessionStorage.NOME_USUARIO;
 
-let dados = {
 
-    acertos: 8,
-    categoria: "Músicas",
-    membros: 3,
-    historia: 2,
-    musicas: 3
+fetch(`/quiz/ultimo/${sessionStorage.ID_USUARIO}`)
+.then(function(resposta){
+    return resposta.json();
+})
+.then(function(dados){
 
-};
+    dados = dados[0];
 
 // KPI
 document.getElementById("pontosQuiz").innerHTML = dados.acertos + "/10";
@@ -251,5 +250,6 @@ new Chart(document.getElementById("graficoBarra"), {
         maintainAspectRatio: false
     }
 
+});
 });
 </script>
